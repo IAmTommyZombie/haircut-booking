@@ -54,7 +54,7 @@ export default function App() {
   };
 
   return (
-    <Router>
+    <Router basename="/haircut-booking">
       {/* Navigation */}
       <motion.nav
         initial={{ opacity: 0 }}

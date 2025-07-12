@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import "react-datepicker/dist/react-datepicker.css";
+
+html,
+body,
+#root {
+  @apply min-h-screen w-full;
+}
+
+@layer components {
+  .btn-primary {
+    @apply px-6 py-3 bg-blue-600 text-white rounded-md hover:bg-blue-700 text-sm font-semibold transition;
+  }
+  .card {
+    @apply bg-white dark:bg-gray-900 rounded-lg shadow-xl p-6 border-l-4;
+  }
+}
+@layer base {
+  html,
+  body,
+  #root {
+    @apply min-h-screen w-full font-poppins;
+  }
+}

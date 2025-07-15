@@ -55,7 +55,6 @@ export default function App() {
 
   return (
     <Router basename="/haircut-booking">
-      {/* Navigation */}
       <motion.nav
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -152,15 +151,12 @@ export default function App() {
           )}
         </div>
       </motion.nav>
-      {/* Hero Section */}
+
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.7 }}
         className="relative bg-cover bg-center py-20 px-4 sm:px-6 lg:px-8"
-        style={{
-          backgroundImage: `url('https://via.placeholder.com/1920x600?text=Barber+Shop')`,
-        }}
       >
         <div className="absolute inset-0 bg-black bg-opacity-50"></div>
         <div className="relative max-w-7xl mx-auto text-center text-white">
@@ -173,7 +169,6 @@ export default function App() {
         </div>
       </motion.div>
 
-      {/* Main Content */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}

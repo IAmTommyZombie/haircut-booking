@@ -47,9 +47,10 @@ export default function BookingForm({ addBooking }) {
       !formData.barber ||
       !formData.dateTime
     ) {
-      setError("All fields are required");
+      setError("Please fill out the form.");
       return;
     }
+
     const selectedService = services.find((s) => s.name === formData.service);
     addBooking({
       ...formData,
@@ -58,6 +59,7 @@ export default function BookingForm({ addBooking }) {
       status: "Confirmed",
       notes: formData.notes,
     });
+
     setFormData({
       name: "",
       service: "",
@@ -131,7 +133,15 @@ export default function BookingForm({ addBooking }) {
       <h2 className="text-2xl font-semibold text-gray-900 dark:text-white mb-6">
         Book Your Appointment
       </h2>
-      {error && <p className="text-red-500 text-sm mb-4">{error}</p>}
+      {error && (
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          className="text-red-500 text-sm font-medium mb-4 text-center"
+        >
+          {error}
+        </motion.div>
+      )}
       <div className="space-y-6">
         <div>
           <label
@@ -282,7 +292,6 @@ export default function BookingForm({ addBooking }) {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             className="px-6 py-3 bg-blue-600 text-white rounded-md hover:bg-blue-700 text-sm font-semibold transition"
-            disabled={!steps.every((step) => step.completed)}
           >
             Book Appointment
           </motion.button>
